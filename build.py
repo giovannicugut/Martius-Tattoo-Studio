@@ -80,7 +80,7 @@ HERO = {
 # Foto delle 4 card "I nostri servizi" in home
 CARD = {
     "tattoo": "img/hannya-colore.jpg",
-    "piercing": "img/fine-line-orecchio.jpg",
+    "piercing": "img/piercing-gioielli.jpg",
     "flash": "img/tigre-clessidra.jpg",
     "eventi": "img/hero-eventi.jpg",
 }
@@ -342,7 +342,8 @@ home = f"""<section class="hero" style="background-image:url('{img(HERO["home"],
       <a href="piercing.html" class="service-card reveal" style="background-image:url('{img(CARD["piercing"], 700)}')">
         <div><h3>PIERCING E GIOIELLI</h3><p>Piercing professionali. Gioielli in titanio e oro.</p><span class="link-gold">SCOPRI DI PIÙ →</span></div>
       </a>
-      <a href="flash.html" class="service-card reveal" style="background-image:url('{img(CARD["flash"], 700)}')">
+      <a href="flash.html" class="service-card event-card-img reveal" style="background-image:url('{img(CARD["flash"], 700)}')">
+        <div class="event-badge">50€<small>FLASH TATTOO</small></div>
         <div><h3>FLASH DA 50€</h3><p>Nuovi disegni ogni settimana.</p><span class="link-gold">SCOPRI DI PIÙ →</span></div>
       </a>
       <a href="eventi.html" class="service-card event-card-img reveal" style="background-image:url('{img(CARD["eventi"], 700)}')">

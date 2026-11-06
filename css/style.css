@@ -443,7 +443,12 @@ h3 { font-size: 28px; }
 /* ---------- Card servizi con foto ---------- */
 .service-card { background-size: cover; background-position: center; }
 .service-card::before { background: linear-gradient(0deg, rgba(0,0,0,.92) 8%, rgba(0,0,0,.35) 55%, rgba(0,0,0,.05)); }
-.event-card-img .event-badge { text-shadow: 0 2px 16px rgba(0,0,0,.8); }
+.event-card-img::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,.65) 0%, transparent 38%);
+}
+.event-card-img .event-badge { z-index: 1; font-size: 96px; text-shadow: 0 2px 18px rgba(0,0,0,.9), 0 0 30px rgba(217,169,63,.35); }
+.event-card-img .event-badge small { font-size: 28px; letter-spacing: .04em; color: var(--white); }
 
 /* ---------- Hero con foto affiancata (es. pagina Piercing) ---------- */
 .hero.hero-side { background-color: #050403; background-size: 0 0; }
