@@ -147,11 +147,15 @@ h3 { font-size: 28px; }
     linear-gradient(rgba(90,45,5,.22), rgba(90,45,5,.22));
 }
 @media (max-width: 1000px) {
-  .hero::before { background: linear-gradient(0deg, rgba(0,0,0,.9), rgba(0,0,0,.55)), linear-gradient(rgba(90,45,5,.2), rgba(90,45,5,.2)); }
+  /* mobile: velo leggero, la foto resta visibile; più scuro solo in basso */
+  .hero::before { background: linear-gradient(0deg, rgba(0,0,0,.85) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,.15) 100%); }
+  .hero h1, .hero .tagline { text-shadow: 0 2px 18px rgba(0,0,0,.7); }
+  .hero .tagline { margin-bottom: 30px; }
+
 }
 .hero .container { position: relative; z-index: 2; padding-top: 60px; padding-bottom: 60px; }
 .hero h1 { margin-bottom: 22px; }
-.hero .tagline { font-weight: 600; color: var(--white); margin-bottom: 10px; }
+.hero .tagline { font-weight: 600; color: var(--white); margin-bottom: 34px; }
 .hero .lead { margin-bottom: 34px; }
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 .hero-info { display: flex; flex-wrap: wrap; gap: 26px 44px; margin-top: 46px; }
@@ -495,3 +499,6 @@ main > section.section:not(.cta-band):nth-of-type(even) {
   .hero-info { gap: 18px; }
   .btn { padding: 14px 22px; font-size: 17px; }
 }
+
+/* mobile: indirizzo e orari nascosti nell'hero (sono nella sezione "Vieni da Martius" e nel footer) */
+@media (max-width: 1000px) { .hero-info { display: none; } }

@@ -302,10 +302,8 @@ flash_icons = "".join(flash_svg(i) for i in range(8))
 
 home = f"""<section class="hero" style="background-image:url('{img(HERO["home"], 2000)}')">
   <div class="container">
-    <span class="eyebrow">{CITY} · Umbria</span>
     <h1>LA TUA STORIA.<br><span class="gold">IL TUO SEGNO.</span></h1>
     <p class="tagline">{STUDIO} Tattoo Studio — arte sulla pelle, dal 1° disegno all'ultima linea.</p>
-    <p class="lead">Tatuaggi personalizzati, piercing professionali, cover-up e restauri nel cuore dell'Alta Valle del Tevere. Arte. Igiene. Fiducia.</p>
     <div class="hero-actions">
       <a href="contatti.html#prenota" class="btn btn-gold">PRENOTA ORA →</a>
       <a href="#lavori" class="btn btn-outline">GUARDA I LAVORI</a>
@@ -313,7 +311,6 @@ home = f"""<section class="hero" style="background-image:url('{img(HERO["home"],
     <div class="hero-info">
       <div>{I['pin']}<span>{ADDRESS_1},<br>{ADDRESS_2}</span></div>
       <div>{I['clock']}<span>{HOURS_SHORT}<br>{HOURS_TIME}</span></div>
-      <div>{I['shield']}<span>Sterile. Sicuro.<br>Professionale.</span></div>
     </div>
   </div>
 </section>
