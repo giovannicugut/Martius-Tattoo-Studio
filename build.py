@@ -70,12 +70,22 @@ HERO = {
     "home": "img/hero-home.jpg",       # mano con guanto nero che tatua
     "artisti": "img/hero-artisti.jpg",    # tatuatore al lavoro
     "cover": "img/hero-cover.jpg",      # schiena tatuata, luce calda
-    "piercing": "img/hero-piercing.jpg",   # gioielli dorati in ombra
+    "piercing": "img/piercing-orecchio.jpg",   # orecchio con piercing multipli (foto a destra)
     "flash": "img/hero-flash.jpg",         # floreale black & grey
     "eventi": "img/hero-eventi.jpg",     # luci al neon
     "aftercare": "img/hero-aftercare.jpg",  # tatuaggio floreale sulla spalla
     "contatti": "img/hero-contatti.jpg",   # interno studio, luci calde
 }
+
+# Foto delle 4 card "I nostri servizi" in home
+CARD = {
+    "tattoo": "img/hannya-colore.jpg",
+    "piercing": "img/fine-line-orecchio.jpg",
+    "flash": "img/tigre-clessidra.jpg",
+    "eventi": "img/hero-eventi.jpg",
+}
+# Hero con la foto affiancata a destra (per foto verticali non molto grandi)
+HERO_SIDE = {"piercing"}
 
 # =====================================================================
 
@@ -237,12 +247,16 @@ def page(filename, title, desc, body):
     print("scritto", filename)
 
 
-def page_hero(eyebrow, white, gold, lead, image, buttons=True):
+def page_hero(eyebrow, white, gold, lead, image, buttons=True, side=False):
     btns = """<div class="hero-actions">
       <a href="contatti.html#prenota" class="btn btn-gold">PRENOTA ORA →</a>
       <a href="index.html#lavori" class="btn btn-outline">GUARDA I LAVORI</a>
     </div>""" if buttons else ""
-    return f"""<section class="hero page-hero" style="background-image:url('{img(image, 1800)}')">
+    if side:
+        cls, style = "hero page-hero hero-side", f"background-image:url('{img(image, 1800)}')"
+    else:
+        cls, style = "hero page-hero", f"background-image:url('{img(image, 1800)}')"
+    return f"""<section class="{cls}" style="{style}">
   <div class="container">
     <span class="eyebrow">{eyebrow}</span>
     <h1>{white}<br><span class="gold">{gold}</span></h1>
@@ -298,7 +312,6 @@ artist_cards = "\n".join(
       </a>"""
     for n, s, _, p, _, _ in ARTISTS
 )
-flash_icons = "".join(flash_svg(i) for i in range(8))
 
 home = f"""<section class="hero" style="background-image:url('{img(HERO["home"], 2000)}')">
   <div class="container">
@@ -323,17 +336,16 @@ home = f"""<section class="hero" style="background-image:url('{img(HERO["home"],
       <p class="lead">Lavori di qualità, artisti esperti. C'è qualcosa per tutti.</p>
     </div>
     <div class="grid-4">
-      <a href="artisti.html" class="service-card reveal" style="background-image:url('{img(IMG_TATTOO, 700)}')">
+      <a href="artisti.html" class="service-card reveal" style="background-image:url('{img(CARD["tattoo"], 700)}')">
         <div><h3>TATUAGGI PERSONALIZZATI</h3><p>Disegni originali, tutti gli stili. Su consulenza.</p><span class="link-gold">SCOPRI DI PIÙ →</span></div>
       </a>
-      <a href="piercing.html" class="service-card reveal" style="background-image:url('{img(IMG_PIERCING, 700)}')">
+      <a href="piercing.html" class="service-card reveal" style="background-image:url('{img(CARD["piercing"], 700)}')">
         <div><h3>PIERCING E GIOIELLI</h3><p>Piercing professionali. Gioielli in titanio e oro.</p><span class="link-gold">SCOPRI DI PIÙ →</span></div>
       </a>
-      <a href="flash.html" class="service-card flash-bg reveal">
-        <div class="flash-icons">{flash_icons}</div>
+      <a href="flash.html" class="service-card reveal" style="background-image:url('{img(CARD["flash"], 700)}')">
         <div><h3>FLASH DA 50€</h3><p>Nuovi disegni ogni settimana.</p><span class="link-gold">SCOPRI DI PIÙ →</span></div>
       </a>
-      <a href="eventi.html" class="service-card event-bg reveal">
+      <a href="eventi.html" class="service-card event-card-img reveal" style="background-image:url('{img(CARD["eventi"], 700)}')">
         <div class="event-badge">20€<small>FLASH &amp; PIERCING</small></div>
         <div><h3>EVENTI DA 20€</h3><p>Giornate speciali. Posti limitati.</p><span class="link-gold">SCOPRI DI PIÙ →</span></div>
       </a>
@@ -488,7 +500,7 @@ piercing_figs = "\n".join(
 plist = "".join(f"<div>{n}<small>{z}</small></div>" for n, z in PIERCINGS)
 pierc = page_hero("Piercing e gioielli", "PIERCING", "PROFESSIONALI.",
                   "Foratura con ago sterile monouso e gioielli di alta qualità, scelti per una guarigione sicura.",
-                  HERO["piercing"]) + f"""
+                  HERO["piercing"], side="piercing" in HERO_SIDE) + f"""
 <section class="section">
   <div class="container">
     <div class="section-head center reveal">
