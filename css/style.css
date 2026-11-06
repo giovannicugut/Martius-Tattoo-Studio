@@ -443,22 +443,23 @@ h3 { font-size: 28px; }
 /* ---------- Gradienti sulle zone nere ---------- */
 main > section.section:not(.cta-band) {
   background:
-    radial-gradient(ellipse 60% 50% at 8% 0%, rgba(217,169,63,.09), transparent 70%),
-    radial-gradient(ellipse 55% 45% at 95% 100%, rgba(150,40,20,.12), transparent 70%),
-    #000;
+    radial-gradient(ellipse 65% 55% at 8% 0%, rgba(217,169,63,.17), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 95% 100%, rgba(170,45,22,.20), transparent 70%),
+    linear-gradient(180deg, #050403, #0c0905);
 }
 main > section.section:not(.cta-band):nth-of-type(even) {
   background:
-    radial-gradient(ellipse 60% 50% at 92% 0%, rgba(217,169,63,.09), transparent 70%),
-    radial-gradient(ellipse 55% 45% at 5% 100%, rgba(150,40,20,.10), transparent 70%),
-    linear-gradient(180deg, #050505, #0b0906);
+    radial-gradient(ellipse 65% 55% at 92% 0%, rgba(217,169,63,.17), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 5% 100%, rgba(170,45,22,.18), transparent 70%),
+    linear-gradient(180deg, #0c0905, #120d07);
 }
 .ac-section {
   background:
-    radial-gradient(ellipse 50% 60% at 100% 50%, rgba(217,169,63,.08), transparent 70%),
-    linear-gradient(180deg, #0a0a0a, #0d0b08);
+    radial-gradient(ellipse 55% 65% at 100% 50%, rgba(217,169,63,.14), transparent 70%),
+    radial-gradient(ellipse 45% 55% at 0% 100%, rgba(170,45,22,.12), transparent 70%),
+    linear-gradient(180deg, #0c0b09, #120e08);
 }
-.site-footer { background: radial-gradient(ellipse 70% 80% at 50% 120%, rgba(217,169,63,.10), transparent 70%), #000; }
+.site-footer { background: radial-gradient(ellipse 75% 85% at 50% 120%, rgba(217,169,63,.18), transparent 70%), #050403; }
 
 /* ---------- Animazioni ---------- */
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; }
