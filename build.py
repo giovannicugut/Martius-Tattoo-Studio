@@ -81,7 +81,7 @@ HERO = {
 CARD = {
     "tattoo": "img/hannya-colore.jpg",
     "piercing": "img/piercing-gioielli.jpg",
-    "flash": "img/tigre-clessidra.jpg",
+    "flash": "img/card-flash.jpg",
     "eventi": "img/hero-eventi.jpg",
 }
 # Hero con la foto affiancata a destra (per foto verticali non molto grandi)
